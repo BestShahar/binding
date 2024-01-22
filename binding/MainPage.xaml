@@ -4,19 +4,35 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <StackLayout>
+
+        <Button
+            x:Name="tt"
+            BindingContext="{x:Reference HeightSlider}"
+            HeightRequest="{Binding Value}"
+            Text="gg" />
+
+
+
         <Label
-            BindingContext="{x:Reference FontSizeSlider}"
-            FontSize="{Binding Value}"
-            HorizontalOptions="Center"
-            Text="שלום יא2" />
+            x:Name="amazingLbl"
+            FontSize="15"
+            Opacity="1"
+            Text="Label 1" />
+
         <Slider
-            x:Name="FontSizeSlider"
-            Maximum="60"
-            Minimum="10" />
+            x:Name="HeightSlider"
+            Maximum="400"
+            Minimum="100" />
         <Slider
-            x:Name="RotationSlider"
-            Maximum="360"
-            Minimum="0" />
+            x:Name="OpacitySlider"
+            BindingContext="{x:Reference amazingLbl}"
+            Maximum="1.0"
+            Minimum="0.0"
+            Value="{Binding Opacity}" />
+
+
+
+
 
 
     </StackLayout>
